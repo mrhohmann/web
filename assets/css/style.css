@@ -1,0 +1,282 @@
+header {
+    background: #e3fbe3;
+   
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.banner{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.titulo-principal {
+    text-align: center;
+    font-size: 2em;
+    margin: 0 0 1em;
+    color: rgba(30, 130, 30, 0.7);
+}
+
+.principal {
+    padding: 2em 0;
+    background: #f0f1eb;
+   
+}
+
+.titulo-principal::first-letter{
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.principal > p {
+    margin: 0 0 1em;
+    line-height: 1.3em;
+}
+
+.principal em {
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+.principal strong{
+    font-weight: bold;
+    color: limegreen;
+}
+
+
+.produtos{
+    padding: 20px;
+}
+
+
+.subtitulo{
+    font-size: 1.5em;
+    text-align: center;
+    margin: 0 0 1em;
+}
+
+.produtos > ul {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 2.5em;
+    width: 20%;
+    margin-left: 30%;
+}
+
+.itens {
+    font-style: italic;
+}
+
+/* first-child = primeiro item da lista
+    last-child = ultimo item
+    nth-child (2) = só o segundo item
+    nth-child (2n) = pares ou (even)
+    nth-child (2n+1) = impares ou (odd)
+*/
+
+.itens::before {
+    content: "🍃";
+    font-size: 0.9em;
+}
+
+.itens:nth-child(2n+1) {
+    font-weight: bold
+}
+
+/* http://xahlee.info/com/unicode_plants_flowers.html*/
+
+.imagem-produtos{
+    width: 35%;
+    opacity: 1;
+    transition: 1s;
+    /* x, y, espalhamento(blur), Intensidade_borda, */
+    box-shadow: 8px 8px 16px 0 #aaaaaa;
+}
+
+.imagem-produtos:hover {
+    opacity: 0.7;
+}
+
+
+
+.painel {
+    /*  relative faz com que o menu nav (absolute) fique dentro do painel */
+    position: relative;
+    width: 940px;
+    margin: 0 auto;
+}
+
+nav {
+    position: absolute;
+    top: 80px;
+    right: 0;
+}
+
+nav a {
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #c78c19;
+    text-decoration: underline;
+}
+
+nav li {
+    /* block = na vertical (padrão) 
+       inline = horizontal
+    */
+    display: inline;
+    margin: 0 0 0 30px;
+}
+
+.lista-produtos {
+    width: 940px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.lista-produtos li {
+    /* mostra itens da lista horizontalmente */
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    background: #c0d88c;
+    /* após adicionar o padding o elemento não cabe mais dentro do 30% do width  */
+    padding: 50px 20px;
+    /* para resolver isso, usamos box-sizing
+      faz com que o padding fique dentro dos 30% do width
+    */
+    box-sizing: border-box;
+
+    /*
+    border-color: #428759;
+    border-width: 2px;
+    border-style: solid;  // dashed, dotted
+    */
+    border: 2px solid #428759;
+    border-radius: 10px;  /* testar: 20px 30px 40px */
+}
+.lista-produtos li:hover {
+    border-color: #c78c19;
+}
+
+.lista-produtos li:active{
+    border-color: #088c19;
+}
+.lista-produtos h2 {
+    font-size: 24px;
+}
+
+.lista-produtos li:hover h2 {
+    font-size: 32px;
+}
+
+.produto-desc {
+    font-size: 18px;
+}
+.produto-preco {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;    
+}
+
+footer{
+    background: url("/assets/imagens/bg.png");
+    padding: 30px 0;
+    text-align: center;
+}
+.copyright{
+    color: #ffffff;
+    font-size: 12px;
+    margin-top: 20px;
+    
+}
+
+main{
+    width: 940px;
+    margin: 0 auto;
+   
+
+}
+
+form{
+    margin: 40px 0;
+
+}
+
+form label, form legend{
+    display: block; /* quebra a linha*/
+    font-size: 20px;
+    margin: 0 0 10px;
+
+}
+.entrada {
+    
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    width: 50%; /* matede do elemnto main (pai)*/
+
+}
+
+.checkbox{
+    margin: 20px 0;
+
+
+}
+
+.enviar{
+    width: 40%;
+    padding: 15px 0;
+    background: limegreen;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-bottom: 20px;
+}
+
+.enviar:hover{
+    background: darkgreen;
+}
+
+.mapa {
+    padding: 3em 0;
+}
+
+.video {
+    margin: 2em 0;
+}
+
+/*
+    seletores avançados
+    1. filhos do primeiro nivel
+    section > p {
+        alguma coisa...
+    }
+
+    2. irmão mais próximo
+    h2 + p {
+        alguma coisa...
+    }
+
+    3. todos os p que vem depois de h2
+    h2 ~ p {
+        alguma coisa...
+    }
+
+    4. todos os p da classe .principal que não são da classe .qualquer
+    .principal p:not (.qualquer){
+        alguma coisa...
+    }
+
+
+
+    */
